@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<head>
+	<title>sentiment analysis</title>
+	<style type="text/css">
+		.row{
+			background-color: blue;
+			padding: 20px;
+		}
+	    .col-md-3{
+	    	background-color: orange;
+	    	padding: 20px;
+	    }
+
+	</style>
+
+</head>
+<body> 
+<h1>SENTIMENT ANALYSIS</h1>
+
+	<div class="row">
+		<div class="col-lg-12">
+			<h2>Enter the text</h2>
+		</div>
+	</div>
+
+
+<div class="row">
+	<div class="col-lg-12">
+	
+		
+			<form action="/sentiment_analysis_pre" method="post" enctype="multpart/form-data">
+				<input name="text" class="form-control" placeholder="Text">
+				<input type="submit">
+			</form>
+
+	</div>
+	<div class="col-md-3">
+		<h1>Sentiment</h1>
+		
+			{% if probability %}
+			{{ sentiment }}
+			{% endif %}
+		
+	</div>
+	<div class="col-md-3">
+		<h1>Probability</h1>
+		
+			{% if probability %}
+			{{ probability }}
+			{% endif %}
+		
+		
+	</div>
+
+
+</div>
+
+
+</body>
+
+</html>
